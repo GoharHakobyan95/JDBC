@@ -8,7 +8,7 @@ public class DBConnectionProvider {
     private static DBConnectionProvider instance = new DBConnectionProvider();
 
     private  Connection connection;
-    private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
+    private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/user?characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
