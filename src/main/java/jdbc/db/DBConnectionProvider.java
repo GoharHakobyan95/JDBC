@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class DBConnectionProvider {
     private static DBConnectionProvider instance = new DBConnectionProvider();
 
-    private  Connection connection;
+    private static Connection connection;
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/user?characterEncoding=utf8";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/employees?characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
@@ -26,7 +26,7 @@ public class DBConnectionProvider {
         return instance;
     }
 
-    public Connection getConnection(){
+    public static Connection getConnection(){
         try {
             if (connection== null || connection.isClosed()) {
                 connection = DriverManager.getConnection(DB_URL,
